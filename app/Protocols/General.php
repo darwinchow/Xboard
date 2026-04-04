@@ -93,6 +93,9 @@ class General extends AbstractProtocol
         if ($serverName = data_get($protocol_settings, 'tls_settings.server_name')) {
             $config['sni'] = $serverName;
         }
+        if ($echConfigList = data_get($protocol_settings, 'tls_settings.ech_config_list')) {
+            $config['ech'] = rawurlencode($echConfigList);
+        }
         if ($fp = Helper::getTlsFingerprint(data_get($protocol_settings, 'utls'))) {
             $config['fp'] = $fp;
         }
@@ -167,6 +170,9 @@ class General extends AbstractProtocol
                 }
                 if ($serverName = data_get($protocol_settings, 'tls_settings.server_name')) {
                     $config['sni'] = $serverName;
+                }
+                if ($echConfigList = data_get($protocol_settings, 'tls_settings.ech_config_list')) {
+                    $config['ech'] = rawurlencode($echConfigList);
                 }
                 if (data_get($protocol_settings, 'tls_settings.allow_insecure')) {
                     $config['allowInsecure'] = '1';
