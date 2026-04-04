@@ -266,8 +266,8 @@ class ClashMeta extends AbstractProtocol
             $array['servername'] = data_get($protocol_settings, 'tls_settings.server_name');
             if ($array['tls'] && $echConfigList = data_get($protocol_settings, 'tls_settings.ech_config_list')) {
                 $array['ech-opts'] = [
-                    'enable': true,
-                    'config': base64_encode($echConfigList)
+                    'enable' => true,
+                    'config' => base64_encode($echConfigList)
                 ];
             }
         }
@@ -354,8 +354,8 @@ class ClashMeta extends AbstractProtocol
                 }
                 if ($echConfigList = data_get($protocol_settings, 'tls_settings.ech_config_list')) {
                     $array['ech-opts'] = [
-                        'enable': true,
-                        'config': base64_encode($echConfigList)
+                        'enable' => true,
+                        'config' => base64_encode($echConfigList)
                     ];
                 }
                 self::appendUtls($array, $protocol_settings);
