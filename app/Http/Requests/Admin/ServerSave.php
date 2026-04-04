@@ -39,6 +39,8 @@ class ServerSave extends FormRequest
             'network' => 'required|string',
             'network_settings' => 'nullable|array',
             'tls_settings.server_name' => 'nullable|string',
+            'tls_settings.ech_server_keys' => 'nullable|string',
+            'tls_settings.ech_config_list' => 'nullable|string',
             'tls_settings.allow_insecure' => 'nullable|boolean',
         ],
         'trojan' => [
@@ -76,6 +78,8 @@ class ServerSave extends FormRequest
             'encryption.encryption' => 'nullable|string', 
             'encryption.decryption' => 'nullable|string', 
             'tls_settings.server_name' => 'nullable|string',
+            'tls_settings.ech_server_keys' => 'nullable|string',
+            'tls_settings.ech_config_list' => 'nullable|string',
             'tls_settings.allow_insecure' => 'nullable|boolean',
             'reality_settings.allow_insecure' => 'nullable|boolean',
             'reality_settings.server_name' => 'nullable|string',
